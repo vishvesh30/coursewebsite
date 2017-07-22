@@ -1,0 +1,72 @@
+{% extends 'instructor_base.html' %}
+{% block head %}
+    <title>HELLO</title>
+{% endblock %}
+
+{% block body %}
+
+  <!-- container -->
+<div class="container-fluid text-center">
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+    <div class="well well-sm">
+      <p><a class="btn-link" href="/instructor/panel/">Overview</a></p>
+    </div>
+    <div class="well well-sm">
+      <p><a href="/instructor/managecourse/">Manage Courses</a></p>
+    </div>
+    <div class="well well-sm">
+      <p><a href="/instructor/createcourse/">Course Creation</a></p>
+      </div>
+    <div class="well well-sm">
+      <p><a href="#">Forums</a></p>
+    </div>
+     <div class="well well-sm">
+      <p><a href="#">Direct Questions From Students</a></p>
+    </div>
+     <div class="well well-sm">
+      <p><a href="#">Students Enrolled</a></p>
+    </div>
+     <div class="well well-sm">
+      <p><a href="#">Earnings</a></p>
+    </div>
+    </div>
+    <div class="col-sm-8 text-left ">
+    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h2>Welcome {{ instructor.fname}} {{ instructor.lname }}</h2>
+     </div>
+    </div>
+    <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Manage Courses</h2>
+     </div>
+      <div class="panel-body">
+
+     <div class="table-responsive">
+      	<table class="table table-bordered">
+            {% for coursename in instructor.course_set.all %}
+        <tr>
+        	<td>{{ coursename.cname }} </td>
+        	<td><a  href="/instructor/managecourse/{{coursename.pk }}/" class="btn btn-default">Manage</a></td>
+        </tr>
+            {% endfor %}
+        </table>
+        </div>
+
+      </div>
+      </div>
+
+    </div>
+    <div class="col-sm-2 sidenav">
+      <div class="well">
+        <p>ADS</p>
+      </div>
+      <div class="well">
+        <p>ADS</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- container -->
+{% endblock %}

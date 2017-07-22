@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Courses</title>
+    <style>
+        .shadow:hover {
+            box-shadow: 3px 3px 3px #5bc0de;
+        }
+
+    </style>
+{% endblock %}
+{% block body %}
+    <div class="container">
+        <h1>Available Courses</h1><br/>
+    </div>
+    <div class="container">
+        <div class="row">
+            {% for course in courses %}
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 mt-4 ">
+                    <div class="card shadow">
+                        <img class="card-img-top" src="{{ UPLOAD_URL }}/{{ course.course_pic }}">
+                        <div class="card-block">
+                            <h4 class="card-title">{{ course.cname }}</h4>
+                            <div class="card-text">
+                                Taught By :{{ course.taughtby }}
+                            </div>
+                            <div class="">
+                                <a class="btn btn-default" href="/course/view_course/{{ course.pk }}/">View Course</a>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <span class="float-right">Ratings</span>
+                        </div>
+                    </div>
+                </div>
+
+            {% endfor %}
+
+        </div>
+    <br />
+    </div>
+{% endblock %}

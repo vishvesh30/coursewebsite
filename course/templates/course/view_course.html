@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+{% block head %}
+    <title>View Course</title>
+{% endblock %}
+
+{% block body %}
+
+    <!-- container -->
+    <div class="container-fluid text-center">
+        <div class="row content">
+            <div class="col-sm-2 sidenav">
+                <div class="well well-sm">
+                    <p><a class="btn-link" href="#overview">Overview</a></p>
+                </div>
+                <div class="well well-sm">
+                    <p><a href="#description">Description</a></p>
+                </div>
+                <div class="well well-sm">
+                    <p><a href="#syllabus">Syllabus</a></p>
+                </div>
+                <div class="well well-sm">
+                    <p><a href="#faqs">FAQs</a></p>
+                </div>
+                <div class="well well-sm">
+                    <p><a href="#review">Reviews and Ratings</a></p>
+                </div>
+
+            </div>
+            <div class="col-sm-8 text-left ">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h2>Welcome to {{ course.cname }}</h2>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <!-- <div class="panel-heading">
+                         <h2>Create Course</h2>
+                     </div>-->
+
+                    <div class="panel-body">
+                    <div id="overview"><h2>OverView</h2></div>
+                    <div class="table-responsive">
+                    <table class="table table-bordered">
+                       <tr>
+                        	<td>Course Full Name</td>
+                            <td>{{ course.cname }}</td>
+                        </tr>
+                        <tr>
+                        	<td>Taught By</td>
+                            <td>{{ course.taughtby }}</td>
+                        </tr>
+                        <tr>
+                        	<td>Course Language</td>
+                            <td>{{ course.course_language }}</td>
+                        </tr>
+                        <tr>
+                        	<td>Course Duration</td>
+                            <td>{{ course.duration }} Weeks</td>
+                        </tr>
+                        <tr>
+                        	<td>Course Fees</td>
+                            <td>{{ course.fee }} Rupees</td>
+                        </tr>
+                    </table>
+                    </div>
+                    <div id="description">
+                        <h2>Description</h2>
+                        <p>this is very great course.......<br/>
+                        this is very great course.......<br/>
+                            this is very great course.......<br/>this is very great course.......<br/>
+                            this is very great course.......<br/>
+
+                        </p>
+                    </div>
+                    <br/>
+                    <div id="syllabus">
+                        <p><h2>Syllabus</h2></p>
+                    </div>
+
+                        <div class="panel-group" id="accordion">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+                                            Week 1 : Sorting
+                                              </a>
+                                    </h4>
+                                </div>
+                                <div id="collapse1" class="panel-collapse collapse in">
+                                    <div class="panel-body">
+                                        <p>Viedo 1 : Bubble Sort</p><br/>
+                                        <p>Viedo 2 : Insertion Sort</p><br/>
+                                        <p>Viedo 3 : Selection Sort</p><br/>
+                                        <p>Viedo 4 : Merge Sort</p><br/>
+                                        <p>Quiz 1: Sorting</p><br/>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+                                            Week 2 : Searching </a>
+                                    </h4>
+                                </div>
+                                <div id="collapse2" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <p>Viedo 1 : Linear Search</p><br/>
+                                        <p>Viedo 2 : Bubble Search</p><br/>
+                                        <p>Quiz 2 : Searching</p><br/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <br/>
+                    <div id="faqs">
+                        <p><h2>FAQs</h2></p>
+                    </div>
+
+                        <div class="panel-group" id="accordion">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+                                            Question1
+                                              </a>
+                                    </h4>
+                                </div>
+                                <div id="collapse3" class="panel-collapse collapse in">
+                                    <div class="panel-body">
+                                        <p>Answer....</p><br/>
+                                        <p>Answer....</p><br/>
+                                        <p>Answer....</p><br/>
+                                        <p>Answer....</p><br/>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+                                           Question 2 </a>
+                                    </h4>
+                                </div>
+                                <div id="collapse4" class="panel-collapse collapse">
+                                    <div class="panel-body">
+                                        <p>Answer....</p><br/>
+                                        <p>Answer....</p><br/>
+                                        <p>Answer....</p><br/>
+                                        <p>Answer....</p><br/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-sm-2 sidenav">
+                <div class="well">
+                    <p>ADS</p>
+                </div>
+                <div class="well">
+                    <p>ADS</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

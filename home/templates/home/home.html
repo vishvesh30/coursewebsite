@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block head %}
+    <title>HELLO</title>
+{% endblock %}
+
+
+{% block body %}
+    <div class = "jumbotron">
+
+   <div class = "container">
+      <h1>Welcome to Our Site</h1>
+      <p>This is an beta preview</p>
+       <p>{{ user1.fname }}</p>
+      <p>
+         <a class = "btn btn-primary btn-lg" role = "button">Sign UP</a>
+      </p>
+   </div>
+    </div>
+
+    <div class="container">
+<div class = "panel panel-primary">
+   <div class = "panel-heading">
+      <h3 class = "panel-title">New Courses</h3>
+   </div>
+
+   <div class = "panel-body">
+      data...
+   </div>
+</div>
+<div class = "panel panel-primary">
+   <div class = "panel-heading">
+      <h3 class = "panel-title">Popular Courses</h3>
+   </div>
+
+   <div class = "panel-body">
+      data...
+   </div>
+</div>
+<div class = "panel panel-primary">
+   <div class = "panel-heading">
+      <h3 class = "panel-title">Our Instructors</h3>
+   </div>
+
+   <div class = "panel-body">
+      data..
+   </div>
+</div>
+<div class = "panel panel-primary">
+   <div class = "panel-heading">
+      <h3 class = "panel-title">How It Works</h3>
+   </div>
+
+   <div class = "panel-body" >
+      <a href = "#" class = "list-group-item ">
+   	Course Creation
+	</a>
+	<a href = "#" class = "list-group-item">Help & Support</a>
+	<a href = "#" class = "list-group-item">Certificates</a>
+   </div>
+</div>
+</div>
+{% endblock %}

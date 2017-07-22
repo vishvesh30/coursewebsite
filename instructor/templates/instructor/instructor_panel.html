@@ -1,0 +1,133 @@
+{% extends 'instructor_base.html' %}
+{% block head %}
+    <title>HELLO</title>
+{% endblock %}
+
+{% block body %}
+
+    <!-- container -->
+<div class="container-fluid text-center">
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+    <div class="well well-sm">
+      <p><a class="btn-link" href="#">Overview</a></p>
+    </div>
+    <div class="well well-sm">
+      <p><a href="/instructor/managecourse/">Manage Courses</a></p>
+    </div>
+    <div class="well well-sm">
+      <p><a href="/instructor/createcourse/">Course Creation</a></p>
+      </div>
+    <div class="well well-sm">
+      <p><a href="#">Forums</a></p>
+    </div>
+     <div class="well well-sm">
+      <p><a href="#">Direct Questions From Students</a></p>
+    </div>
+     <div class="well well-sm">
+      <p><a href="#">Students Enrolled</a></p>
+    </div>
+     <div class="well well-sm">
+      <p><a href="/instructor/createcourse1/">Earnings</a></p>
+    </div>
+    </div>
+    <div class="col-sm-8 text-left ">
+    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h2>Welcome {{ user1.fname}} {{ user1.lname }}</h2>
+         {% load staticfiles %}
+              <img src="{{ UPLOAD_URL }}/{{ user1.pic }}" width="300px" height="200px" alt="{{ user1.pic }}">
+      <h2>Overview</h2>
+     </div>
+    <div class="panel-body">
+     <div class="table-responsive">
+  		<table class="table table-bordered">
+    		<tr>
+            	<td>Total Courses Created</td>
+                <td>{{ user1.course_set.count }}</td>
+            </tr>
+            <tr>
+            	<td>Total Students Enrolled</td>
+                <td>
+                   {% for coursename in user1.course_set.all %}
+                        {{ coursename.enroll_set.count }}
+                    {% endfor %}
+
+                </td>
+            </tr>
+            <tr>
+
+            	<td>Total Earnings</td>
+                <td>$555</td>
+            </tr>
+            <tr>
+
+            	<td>Skills</td>
+                <td>Data Struvture</td>
+            </tr>
+            <tr>
+
+            	<td>Overall Rating</td>
+                <td>5</td>
+            </tr>
+  		</table>
+	</div>
+    </div>
+    </div>
+    <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Manage Courses</h2>
+     </div>
+      <div class="panel-body">
+
+     <div class="table-responsive">
+      	<table class="table table-bordered">
+            {% for coursename in user1.course_set.all %}
+        <tr>
+        	<td>{{ coursename.cname }} </td>
+        	<td><a type="button" href="/instructor/managecourse/{{coursename.pk }}/" class="btn btn-default">Manage</a></td>
+        </tr>
+            {% endfor %}
+        </table>
+        </div>
+
+      </div>
+      </div>
+
+       <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Manage Forums</h2>
+     </div>
+      <div class="panel-body">
+
+     <div class="table-responsive">
+      	<table class="table table-bordered">
+        <tr>
+        	<td>Course 1</td>
+        	<td><button type="button" class="btn btn-default">Visit</button></td>
+        </tr>
+
+        <tr>
+        	<td>Course 2</td>
+        	<td><button type="button" class="btn btn-default">Visit</button></td>
+        </tr>
+        </table>
+        </div>
+
+      </div>
+      </div>
+    </div>
+    <div class="col-sm-2 sidenav">
+      <div class="well">
+        <p>ADS</p>
+      </div>
+      <div class="well">
+        <p>ADS</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- container -->
+
+{% endblock %}

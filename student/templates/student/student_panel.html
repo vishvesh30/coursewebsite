@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block head %}
+    <title>Student Panel</title>
+{% endblock %}
+{% block body %}
+{% load staticfiles %}
+
+    <!-- container -->
+<div class="container-fluid text-center">
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+    <div class="well well-sm">
+      <p><a class="btn-link" href="/student/">Overview</a></p>
+    </div>
+    <div class="well well-sm">
+      <p><a href="/student/edit/">Edit Profile</a></p>
+    </div>
+        <div class="well well-sm">
+      <p><a href="/student/change_password/">Change Password</a></p>
+    </div>
+    <div class="well well-sm">
+      <p><a href="//">Course Enrolled / Completed</a></p>
+      </div>
+     <div class="well well-sm">
+      <p><a href="#">Direct Questions To Instructor</a></p>
+    </div>
+     <div class="well well-s    m">
+      <p><a href="#">Earnings</a></p>
+    </div>
+    </div>
+
+
+    <div class="col-sm-8 text-left ">
+
+        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h2>Welcome {{ user1.fname}} {{ user1.lname }}</h2>
+      <h2>Overview</h2>
+     </div>
+    <div class="panel-body">
+     <div class="table-responsive">
+  		<table class="table table-bordered">
+    		<tr>
+                {% load staticfiles %}
+            	<td colspan="2" align="center"><img src="{{ UPLOAD_URL }}{{ user1.pic }}" width="300px" height="200px" alt="{{ user1.pic }} " class="img-rounded"></td>
+
+            </tr>
+            <tr>
+            	<td>First Name</td>
+                <td>
+                   {{ user1.fname }}
+                </td>
+            </tr>
+            <tr>
+
+            	<td>Last Name</td>
+                <td>{{ user1.lname }}</td>
+            </tr>
+
+            <tr>
+            	<td>UserName</td>
+                <td>{{ user1.uname }}</td>
+            </tr>
+
+            <tr>
+            	<td>Email</td>
+                <td>{{ user1.email }}</td>
+            </tr>
+  		</table>
+	</div>
+    </div>
+    </div>
+    </div>
+    </div>
+</div>
+{% endblock %}
