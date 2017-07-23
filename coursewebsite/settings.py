@@ -26,7 +26,6 @@ SECRET_KEY = 'e71)5wyj+jtil9ru)@l7j0*t%o_da5)0-4ld0!zhj5k$a!c-6-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-django.setup()
 ALLOWED_HOSTS = []
 
 
