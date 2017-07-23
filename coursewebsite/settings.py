@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+import django
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -24,7 +26,7 @@ SECRET_KEY = 'e71)5wyj+jtil9ru)@l7j0*t%o_da5)0-4ld0!zhj5k$a!c-6-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
+django.setup()
 ALLOWED_HOSTS = []
 
 
@@ -35,13 +37,17 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django.contrib.sites',
+    'django.contrib.flatpages',
+    'django_comments.models.Comment',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-     'joinus',
+    'joinus',
     'home',
     'instructor',
     'course',
     'student',
+    'blog',
 ]
 
 MIDDLEWARE = [

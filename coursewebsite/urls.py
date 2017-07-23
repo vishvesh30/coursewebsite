@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^instructor/',include('instructor.urls')),
     url(r'^course/',include('course.urls')),
     url(r'^student/',include('student.urls')),
+    url(r'blog/',include('blog.urls')),
 ]
 
 if settings.DEBUG:
