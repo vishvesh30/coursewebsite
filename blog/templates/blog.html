@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block head %}
+    <title>Blog</title>
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <table class="table table-responsive">
+            <tr>
+                <td><h3>Blog name</h3></td>
+                <td><h3>Created on</h3></td>
+            </tr>
+            {% for post in object_list %}
+                <tr>
+                    <td><h3><a href="/blog/{{ post.id }}">{{ post.title }}</a></h3></td>
+                    <td><h5>{{ post.date }}</h5></td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}
